@@ -3,10 +3,30 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-	const weatherApi = `${process.env.REACT_APP_WEATHER_URL}=detroit,michigan${process.env.REACT_APP_API_KEY}`;
-	console.log(weatherApi);
+	const [date, setData] = useState({});
+	const [location, setLocation] = useState('');
+
+	const weatherApi = `${process.env.REACT_APP_WEATHER_URL}${location}${process.env.REACT_APP_API_KEY}`;
+	const searchLocation = (event) => {
+		if (event.key === 'Enter') {
+			axios.get(weatherApi).then((res) => {
+				setData(res.data);
+				console.log(res.data);
+			});
+		}
+	};
+
 	return (
 		<div className='App'>
+			<div className='search'>
+				<input
+					onChange={(event) => setLocation(event.target.value)}
+          onKeyPress={searchLocation}
+					placeholder='Enter Location...'
+					type='text'
+					value={location}
+				/>
+			</div>
 			<div className='container'>
 				<div className='top'>
 					<div className='location'>
@@ -30,7 +50,7 @@ function App() {
 					</div>
 					<div className='wind'>
 						<p className='bold'>8 MPH</p>
-            <p>Wind Speed</p>
+						<p>Wind Speed</p>
 					</div>
 				</div>
 			</div>

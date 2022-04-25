@@ -52,6 +52,19 @@ p {
     transform: rotate(269deg);
 }
 
+.App input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    font-size: 1.2rem;
+    padding: 0.7rem 1.5rem;
+}
+
+.App .search {
+    padding: 1rem;
+    text-align: center;
+}
+
 .App .top {  
     margin: 1rem auto;
     width: 100%;
@@ -71,4 +84,8 @@ p {
     padding: 0 1rem;
     position: relative;
     top: 8%;
+}
+
+::placeholder {
+    color: #f8f8f8;
 }
