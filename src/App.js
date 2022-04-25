@@ -7,7 +7,10 @@ function App(){
   console.log(weatherApi);
   return (
     <div className="App">
-
+      <div className="container">
+        <div className="top"></div>
+        <div className="bottom"></div>
+      </div>
     </div>
   );
 }
