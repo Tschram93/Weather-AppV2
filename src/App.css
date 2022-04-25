@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar&family=Lato&family=Oswald&family=Outfit&family=Poppins:wght@400;600;700&family=Ubuntu&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Akshar', Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+.App {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    height: 110vh;
+    position: relative;
+    width: 100%;
+}
+
+.App:before {
+    background: url('./assets/pexels-benjamin-suter-3617500-min.jpg') no-repeat center center/cover;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.App .bottom {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.App .description {
+    position: relative;
+    right: -90%;
+    transform-origin: 0 0;
+    transform: rotate(269deg);
+}
+
+.App .top {  
+    margin: 1rem auto;
+    width: 100%;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 500px; /* can change this to fit better*/
+    justify-content:space-between;
+    margin: auto;
+    max-width: 700px;
+    padding: 0 1rem;
+    position: relative;
+    top: 8%;
+}
