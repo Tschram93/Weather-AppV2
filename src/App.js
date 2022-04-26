@@ -7,11 +7,12 @@ function App() {
 	const [location, setLocation] = useState('');
 	const weatherApi = `${process.env.REACT_APP_WEATHER_URL}${location}${process.env.REACT_APP_API_KEY}`;
 
-	const searchLocation = async (event) => {
+	const searchLocation = async ( event ) => {
 		if (event.key === 'Enter') {
-			axios.get(weatherApi).then((response) => {
-				setData(response.data);
-				console.log(response.data);
+			axios.get(weatherApi)
+				.then((response) => {
+					setData(response.data);
+					console.log(response.data);
 			});
 			setLocation('');
 		}
@@ -21,11 +22,11 @@ function App() {
 		<div className='App'>
 			<div className='search'>
 				<input
-					value={location}
 					onChange={(event) => setLocation(event.target.value)}
 					onKeyPress={searchLocation}
 					placeholder='Enter Location'
 					type='text'
+					value={location}
 				/>
 			</div>
 			<div className='container'>
